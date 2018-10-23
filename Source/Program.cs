@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -45,7 +45,7 @@ namespace FixieToNunitConverter
 				var compilationUnitSyntax = syntaxTree.GetCompilationUnitRoot();
 				if (compilationUnitSyntax.Usings.Any(x => ((dynamic) x).Name.ToString().Contains("NUnit.Framework")))
 				{
-					var newSyntaxTree = Formatter.Format(compilationUnitSyntax, workspace, workspace.Options);
+					var newSyntaxTree = Formatter.Format(compilationUnitSyntax, workspace, workspace.Options.WithChangedOption(FormattingOptions.UseTabs, "C#", true));
 					File.WriteAllText(syntaxTree.FilePath, newSyntaxTree.GetText().ToString());
 				}
 					
@@ -160,5 +160,4 @@ namespace FixieToNunitConverter
 			});
 		}
 	}
-
 }
