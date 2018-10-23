@@ -9,4 +9,6 @@ This is built for my personal needs, but with a bit of editing I think this coul
 
 It takes as a command line argument the path to the solution, and assumes that test projects are ones with ".Tests" in their name eg "FixieToNunit.Tests.Unit"
 
+It uses my companies personal formatting style (tabs not spaces), so you may have to edit that.
+
 There are still some other differences between Fixie and Nunit - for example Fixie creates a new instance of the class for every test, and NUnit reuses the old one, so there will probably be further changes you'll have to make. The easiest way to that is to run the tests and see what fails!
