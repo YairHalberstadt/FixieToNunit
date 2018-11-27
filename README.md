@@ -12,3 +12,5 @@ It takes as a command line argument the path to the solution, and assumes that t
 It uses my companies personal formatting style (tabs not spaces), so you may have to edit that.
 
 There are still some other differences between Fixie and Nunit - for example Fixie creates a new instance of the class for every test, and NUnit reuses the old one, so there will probably be further changes you'll have to make. The easiest way to that is to run the tests and see what fails!
+
+Note that I would recommend using XUnit over NUnit, if you are deciding between the two.
